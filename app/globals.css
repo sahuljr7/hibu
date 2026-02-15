@@ -154,6 +154,20 @@
   }
 }
 
+@layer components {
+  .glassmorphism {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl;
+  }
+
+  .glassmorphism-light {
+    @apply backdrop-blur-md bg-white/70 border border-white/30 rounded-2xl;
+  }
+
+  .glassmorphism-dark {
+    @apply backdrop-blur-md bg-slate-900/50 border border-white/10 rounded-2xl;
+  }
+}
+
 @layer utilities {
   @keyframes fade-in {
     from {

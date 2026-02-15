@@ -65,13 +65,13 @@ export function FeaturesGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
       {features.map((feature, index) => (
-        <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
-          <FeatureCard
-            icon={feature.icon}
-            title={feature.title}
-            description={feature.description}
-          />
-        </div>
+        <FeatureCard
+          key={index}
+          icon={feature.icon}
+          title={feature.title}
+          description={feature.description}
+          index={index}
+        />
       ))}
     </div>
   )
