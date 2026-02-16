@@ -2,26 +2,47 @@
 
 import { Play } from 'lucide-react'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 interface ReviewCardProps {
   clientName: string
   clientTitle: string
   quote: string
   thumbnailColor?: string
+  index?: number
 }
 
-export function ReviewCard({ clientName, clientTitle, quote, thumbnailColor = 'from-blue-600 to-blue-800' }: ReviewCardProps) {
+export function ReviewCard({ clientName, clientTitle, quote, thumbnailColor = 'from-blue-600 to-blue-800', index = 0 }: ReviewCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: index * 0.15,
+        ease: 'easeOut',
+      },
+    },
+  }
+
   return (
-    <div className="flex flex-col gap-4 animate-fade-in">
+    <motion.div
+      className="flex flex-col gap-4"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-50px' }}
+    >
       {/* Video Thumbnail Container */}
-      <div
-        className={`relative h-48 sm:h-56 md:h-64 rounded-lg overflow-hidden cursor-pointer group transition-transform duration-300 ${
-          isHovered ? 'scale-105' : 'scale-100'
-        }`}
+      <motion.div
+        className="relative h-48 sm:h-56 md:h-64 rounded-lg overflow-hidden cursor-pointer group transition-transform duration-300"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
       >
         {/* Background Gradient */}
         <div className={`absolute inset-0 bg-gradient-to-br ${thumbnailColor}`} />
@@ -62,7 +83,7 @@ export function ReviewCard({ clientName, clientTitle, quote, thumbnailColor = 'f
             </div>
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Quote Section */}
       <div className="px-1">
@@ -70,6 +91,6 @@ export function ReviewCard({ clientName, clientTitle, quote, thumbnailColor = 'f
           "{quote}"
         </p>
       </div>
-    </div>
+    </motion.div>
   )
 }

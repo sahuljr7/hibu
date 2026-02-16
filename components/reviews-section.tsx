@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { ReviewCard } from '@/components/review-card'
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
@@ -32,11 +33,17 @@ export function ReviewsSection() {
     <section className="w-full py-12 sm:py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Title */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+        <motion.div
+          className="text-center mb-12 sm:mb-16 md:mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground text-balance">
             Real reviews from real local business clients
           </h2>
-        </div>
+        </motion.div>
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-16 md:mb-20">
@@ -47,13 +54,22 @@ export function ReviewsSection() {
               clientTitle={review.clientTitle}
               quote={review.quote}
               thumbnailColor={review.thumbnailColor}
+              index={index}
             />
           ))}
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
-          <button
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onMouseEnter={() => setCtaHovered(true)}
             onMouseLeave={() => setCtaHovered(false)}
             className="px-6 sm:px-8 py-3 sm:py-3.5 bg-primary text-primary-foreground font-bold text-sm sm:text-base rounded-full hover:bg-primary/90 active:bg-primary/75 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl relative overflow-hidden group touch-manipulation"
@@ -68,8 +84,8 @@ export function ReviewsSection() {
               />
             </span>
             <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-300" />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   )

@@ -8,6 +8,7 @@ import { StatsSection } from '@/components/stats-section'
 import { PartnersSection } from '@/components/partners-section'
 import { VideoFeatureSection } from '@/components/video-feature-section'
 import { FinalCTASection } from '@/components/final-cta-section'
+import { DisclaimerSection } from '@/components/disclaimer-section'
 
 export default function Page() {
   return (
@@ -22,6 +23,7 @@ export default function Page() {
       <PartnersSection />
       <VideoFeatureSection />
       <FinalCTASection />
+      <DisclaimerSection />
     </main>
   )
 }

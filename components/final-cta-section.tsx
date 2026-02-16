@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 
@@ -16,35 +17,71 @@ export function FinalCTASection() {
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Centered content */}
-        <div className="max-w-2xl mx-auto text-center space-y-6 sm:space-y-8 animate-fade-in">
+        <motion.div
+          className="max-w-2xl mx-auto text-center space-y-6 sm:space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           {/* Logo - hibu ONE */}
-          <div className="flex items-center justify-center gap-2 sm:gap-3">
+          <motion.div
+            className="flex items-center justify-center gap-2 sm:gap-3"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
               hibu
             </h2>
-            <div className="bg-white rounded-full w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
+            <motion.div
+              className="bg-white rounded-full w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+            >
               <span className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-blue-900">
                 ONE
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Main Heading */}
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-white text-balance leading-tight">
+          <motion.h3
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-white text-balance leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             See how it can all work together for you
-          </h3>
+          </motion.h3>
 
           {/* Supporting Description */}
-          <p className="text-base sm:text-lg lg:text-xl text-white/80 text-balance leading-relaxed max-w-xl mx-auto">
+          <motion.p
+            className="text-base sm:text-lg lg:text-xl text-white/80 text-balance leading-relaxed max-w-xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
             Save time, save effort and see real marketing results. It all starts with one demo to find out how Hibu One can do more for your marketing.
-          </p>
+          </motion.p>
 
           {/* CTA Button */}
-          <div className="pt-4 sm:pt-6 lg:pt-8">
-            <button
+          <motion.div
+            className="pt-4 sm:pt-6 lg:pt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <motion.button
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               className="px-8 sm:px-10 lg:px-12 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white font-bold text-base sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl touch-manipulation relative overflow-hidden group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Request a demo
@@ -56,18 +93,9 @@ export function FinalCTASection() {
                 />
               </span>
               <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-300" />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Disclaimer Text - Below Section */}
-      <div className="w-full bg-background/95 backdrop-blur border-t border-border py-6 sm:py-8 lg:py-10 mt-12 sm:mt-16 lg:mt-20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <p className="text-xs sm:text-sm text-muted-foreground text-center max-w-4xl mx-auto leading-relaxed">
-            *Based on unique visitor data for Hibu websites with solutions. The comparisons and other information on this page should be considered directional only. Actual results will differ and will depend on a number of factors including business vertical, business geography, level of spend and length of campaign for Online Display, level of spend and length of campaign for Search Engine Marketing and other digital solutions employed. Source: Hibu first-party data.
-          </p>
-        </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
