@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
+import Link from 'next/link'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -105,12 +106,12 @@ export function Navbar() {
                 >
                   Support
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="/login"
                   className="block px-3 py-2.5 text-sm text-foreground/80 hover:text-foreground hover:bg-secondary/80 rounded-lg transition-all duration-150"
                 >
                   Login
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -181,12 +182,12 @@ export function Navbar() {
                 >
                   Support
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="/login"
                   className="block text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-secondary/40"
                 >
                   Login
-                </a>
+                </Link>
               </div>
             </div>
           </div>

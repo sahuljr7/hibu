@@ -20,6 +20,7 @@ export function FooterTop() {
 
   const supportLinks = [
     { label: 'Client Support', href: '#' },
+    { label: 'Client Login', href: '/login' },
     { label: 'Hibu Blog', href: '#' },
     { label: 'Transparency in Coverage', href: '#' },
   ]
