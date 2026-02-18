@@ -18,8 +18,8 @@ export function FeatureCard({ icon, title, description, index = 0 }: FeatureCard
       y: 0,
       transition: {
         duration: 0.5,
-        delay: index * 0.1,
-        ease: 'easeOut',
+        delay: index * 0.08,
+        ease: [0.4, 0, 0.2, 1],
       },
     },
   }
@@ -32,32 +32,32 @@ export function FeatureCard({ icon, title, description, index = 0 }: FeatureCard
       whileInView="visible"
       viewport={{ once: true, margin: '-50px' }}
     >
-      {/* Glassmorphism Glow background */}
-      <div className="absolute -inset-2 sm:-inset-3 bg-gradient-to-br from-blue-200/20 via-blue-100/10 to-blue-200/20 dark:from-blue-500/20 dark:via-blue-400/10 dark:to-blue-500/20 rounded-2xl opacity-0 sm:opacity-30 group-hover:opacity-100 dark:group-hover:opacity-80 transition-all duration-500 blur-xl backdrop-blur-md" />
-      
-      {/* Card content with glassmorphism on hover */}
+      {/* Gradient glow background */}
+      <div className="absolute -inset-2 sm:-inset-3 bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10 dark:from-primary/15 dark:via-primary/8 dark:to-accent/15 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
+
+      {/* Card content */}
       <motion.div
-        className="relative bg-white/80 dark:bg-card/80 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 group-hover:bg-white/90 dark:group-hover:bg-card/90 group-hover:border-white/40 dark:group-hover:border-white/20 group-hover:shadow-xl dark:group-hover:shadow-blue-500/20"
+        className="relative bg-card/90 dark:bg-card/70 backdrop-blur-sm border border-border/50 dark:border-border/30 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 group-hover:bg-card dark:group-hover:bg-card/90 group-hover:border-border/80 dark:group-hover:border-primary/20 group-hover:shadow-xl dark:group-hover:shadow-primary/10"
         whileHover={{ scale: 1.02, y: -4 }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
       >
-        {/* Icon container with glow */}
+        {/* Icon container */}
         <motion.div
-          className="mb-4 flex justify-center"
-          whileHover={{ y: -4 }}
+          className="mb-5 flex justify-center"
+          whileHover={{ y: -3 }}
           transition={{ duration: 0.3 }}
         >
           <motion.div
-            className="relative w-14 sm:w-16 h-14 sm:h-16 rounded-xl bg-blue-50 dark:bg-blue-950/40 flex items-center justify-center transition-all duration-300 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/60 shadow-lg"
-            whileHover={{ scale: 1.15 }}
+            className="relative w-14 sm:w-16 h-14 sm:h-16 rounded-2xl bg-primary/8 dark:bg-primary/12 flex items-center justify-center transition-all duration-300 group-hover:bg-primary/12 dark:group-hover:bg-primary/20 shadow-sm"
+            whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
           >
             {/* Subtle glow on hover */}
-            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-300/40 to-blue-200/30 blur-sm" />
+            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/20 to-accent/15 blur-sm" />
             <motion.div
-              className="relative text-blue-600 dark:text-blue-400"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+              className="relative text-primary dark:text-primary"
+              whileHover={{ scale: 1.15, rotate: 3 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 12 }}
             >
               {icon}
             </motion.div>
@@ -69,7 +69,7 @@ export function FeatureCard({ icon, title, description, index = 0 }: FeatureCard
           className="text-lg sm:text-xl font-bold font-display text-foreground mb-3 group-hover:text-primary transition-colors duration-300"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: index * 0.1 + 0.2 }}
+          transition={{ delay: index * 0.08 + 0.2 }}
           viewport={{ once: true }}
         >
           {title}
@@ -80,7 +80,7 @@ export function FeatureCard({ icon, title, description, index = 0 }: FeatureCard
           className="text-sm sm:text-base text-muted-foreground leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: index * 0.1 + 0.3 }}
+          transition={{ delay: index * 0.08 + 0.3 }}
           viewport={{ once: true }}
         >
           {description}

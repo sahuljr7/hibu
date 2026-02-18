@@ -30,11 +30,11 @@ export function ReviewsSection() {
   const [ctaHovered, setCtaHovered] = useState(false)
 
   return (
-    <section className="w-full py-12 sm:py-16 md:py-24 bg-secondary">
+    <section className="w-full py-14 sm:py-18 md:py-26 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Title */}
         <motion.div
-          className="text-center mb-12 sm:mb-16 md:mb-20"
+          className="text-center mb-14 sm:mb-18 md:mb-22"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -46,7 +46,7 @@ export function ReviewsSection() {
         </motion.div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-16 md:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 mb-14 sm:mb-18 md:mb-22">
           {reviews.map((review, index) => (
             <ReviewCard
               key={index}
@@ -68,22 +68,21 @@ export function ReviewsSection() {
           viewport={{ once: true }}
         >
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
             onMouseEnter={() => setCtaHovered(true)}
             onMouseLeave={() => setCtaHovered(false)}
-            className="px-6 sm:px-8 py-3 sm:py-3.5 bg-primary text-primary-foreground font-bold text-sm sm:text-base rounded-full hover:bg-primary/90 active:bg-primary/75 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl relative overflow-hidden group touch-manipulation"
+            className="btn-glow px-6 sm:px-8 py-3 sm:py-3.5 bg-primary text-primary-foreground font-bold text-sm sm:text-base rounded-full hover:bg-primary/90 active:bg-primary/75 transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 relative overflow-hidden group touch-manipulation"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               Watch more success stories
               <ArrowRight
                 size={18}
-                className={`transition-all duration-300 flex-shrink-0 ${
-                  ctaHovered ? 'translate-x-1' : 'translate-x-0'
-                }`}
+                className={`transition-all duration-300 flex-shrink-0 ${ctaHovered ? 'translate-x-1' : 'translate-x-0'
+                  }`}
               />
             </span>
-            <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-300" />
+            <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
           </motion.button>
         </motion.div>
       </div>

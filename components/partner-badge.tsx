@@ -7,9 +7,9 @@ interface PartnerBadgeProps {
 
 export function PartnerBadge({ name, icon }: PartnerBadgeProps) {
   return (
-    <div className="flex flex-col items-center justify-center px-4 sm:px-6 py-3 sm:py-4 bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/30 hover:border-border/60 flex-shrink-0">
+    <div className="flex flex-col items-center justify-center px-5 sm:px-7 py-3.5 sm:py-4.5 bg-card rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-border/30 hover:border-border/60 flex-shrink-0 hover:-translate-y-1 group">
       {icon && (
-        <div className="mb-2 text-lg sm:text-xl opacity-75 hover:opacity-100 transition-opacity">
+        <div className="mb-2 text-lg sm:text-xl opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
           {icon}
         </div>
       )}

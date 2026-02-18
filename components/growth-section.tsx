@@ -7,20 +7,20 @@ import { CTAButtons } from './cta-buttons'
 
 export function GrowthSection() {
   return (
-    <section className="relative w-full py-12 sm:py-16 md:py-20 lg:py-28 bg-secondary/30 overflow-hidden">
+    <section className="relative w-full py-14 sm:py-18 md:py-24 lg:py-32 bg-secondary/40 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-8 sm:mb-12 md:mb-16"
+          className="text-center mb-10 sm:mb-14 md:mb-18"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground mb-3 sm:mb-4 text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground mb-3 sm:mb-5 text-balance">
             Grow your business with Hibu One
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Hibu's expertise and technology drive lower lead costs and higher marketing ROI
           </p>
         </motion.div>
@@ -30,18 +30,18 @@ export function GrowthSection() {
           className="max-w-6xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
           viewport={{ once: true }}
         >
           <motion.div
-            className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl"
-            whileHover={{ boxShadow: '0 20px 60px rgba(180, 80, 255, 0.3)' }}
-            transition={{ duration: 0.3 }}
+            className="bg-gradient-to-br from-slate-900 via-slate-850 to-purple-950/80 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/20 dark:shadow-black/40"
+            whileHover={{ boxShadow: '0 25px 60px -12px rgba(160, 70, 235, 0.25)' }}
+            transition={{ duration: 0.4 }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 p-6 sm:p-8 md:p-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 p-6 sm:p-8 md:p-12 lg:p-14 items-center">
               {/* Left Column - Text Content */}
               <motion.div
-                className="flex flex-col justify-center space-y-4 sm:space-y-6 order-2 lg:order-1"
+                className="flex flex-col justify-center space-y-5 sm:space-y-7 order-2 lg:order-1"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -55,7 +55,7 @@ export function GrowthSection() {
                   viewport={{ once: true }}
                 >
                   <h3 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-2 sm:mb-4">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-500">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
                       Hibu One
                     </span>
                   </h3>
@@ -63,7 +63,7 @@ export function GrowthSection() {
 
                 {/* Description */}
                 <motion.p
-                  className="text-base sm:text-lg text-white/90 leading-relaxed"
+                  className="text-base sm:text-lg text-white/85 leading-relaxed"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
@@ -91,17 +91,17 @@ export function GrowthSection() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-lime-400 text-slate-900 font-bold text-sm sm:text-base rounded-full hover:bg-lime-300 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg relative overflow-hidden group touch-manipulation">
+                  <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-lime-400 text-slate-900 font-bold text-sm sm:text-base rounded-full hover:bg-lime-300 transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] shadow-lg shadow-lime-400/25 relative overflow-hidden group touch-manipulation">
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Learn about Hibu One
                     </span>
-                    <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-300" />
+                    <div className="absolute inset-0 bg-white/0 group-hover:bg-white/15 transition-all duration-300" />
                   </button>
-                  <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground font-bold text-sm sm:text-base rounded-full hover:from-primary/90 hover:to-primary/80 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-2xl relative overflow-hidden group touch-manipulation">
+                  <button className="btn-glow px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground font-bold text-sm sm:text-base rounded-full hover:from-primary/90 hover:to-primary/80 transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.97] shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 relative overflow-hidden group touch-manipulation">
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Request a demo
                     </span>
-                    <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-300" />
+                    <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
                   </button>
                 </motion.div>
               </motion.div>

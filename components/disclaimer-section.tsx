@@ -6,8 +6,11 @@ export function DisclaimerSection() {
   return (
     <section className="w-full bg-background py-8 sm:py-12">
       <div className="container mx-auto px-4 sm:px-6">
+        {/* Subtle divider */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8 sm:mb-10" />
+
         <motion.p
-          className="text-xs sm:text-xs text-muted-foreground text-center max-w-4xl mx-auto leading-relaxed"
+          className="text-xs text-muted-foreground/70 text-center max-w-4xl mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}

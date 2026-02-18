@@ -71,12 +71,12 @@ export function AnimatedCounter({
   return (
     <motion.div
       ref={containerRef}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground font-display">
+      <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground font-display" style={{ fontFeatureSettings: '"tnum"' }}>
         {prefix}
         {formattedValue}
         {suffix}
