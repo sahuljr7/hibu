@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   ],
 }
 
+import { DynamicBackground } from '@/components/dynamic-background'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,10 +34,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased bg-background text-foreground">
+      <body className="font-sans antialiased bg-background text-foreground min-h-screen relative">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-          <Footer />
+          <DynamicBackground />
+          <div className="relative z-10 flex flex-col min-h-screen">
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
